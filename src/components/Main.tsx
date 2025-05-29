@@ -51,7 +51,7 @@ export default function Main() {
     <main
       className={`${manrope.className} relative flex flex-col items-center justify-center px-2 py-10 bg-backgroundBlue-600 gap-6 w-fit rounded-lg text-2xl max-w-xl transition-all duration-500`}
     >
-      <h1 className="text-primaryButton-green tracking-widest uppercase text-lg font-bold min-w-[105px]">
+      <h1 className="text-primaryButton-green tracking-widest uppercase text-sm font-bold min-w-[105px]">
         Advice #<span className="advice-id">{advices.id}</span>
       </h1>
 
@@ -86,7 +86,7 @@ export default function Main() {
       />
 
       <button
-        className="absolute translate-y-[calc(100%+5rem)] sm:translate-y-[calc(100%+4.4rem)] bg-primaryButton-green rounded-full w-15 h-15 flex items-center justify-center hover:shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+        className="absolute translate-y-[calc(100%+5rem)] sm:translate-y-[calc(100%+4.4rem)] bg-primaryButton-green  rounded-full w-15 h-15 flex items-center justify-center hover:shadow-xl hover:shadow-primaryButton-green cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
         onClick={handleClick}
         disabled={loading || isTyping}
       >
