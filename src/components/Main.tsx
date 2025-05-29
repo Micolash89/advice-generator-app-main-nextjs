@@ -14,18 +14,17 @@ export default function Main() {
 
   const handleClick = async () => {
     setLoading(true);
-    setDisplayedText(""); // Resetear el texto mostrado
+    setDisplayedText("");
     const response = await fetch("https://api.adviceslip.com/advice");
     const data = await response.json();
     setAdvices(data.slip);
     setLoading(false);
   };
 
-  // Efecto para la animación de escritura
   useEffect(() => {
     if (!loading && advices.advice && advices.advice !== displayedText) {
       setIsTyping(true);
-      setDisplayedText(""); // Resetear antes de empezar a escribir
+      setDisplayedText(""); 
       
       let currentIndex = 0;
       const fullText = advices.advice;
@@ -38,7 +37,7 @@ export default function Main() {
           setIsTyping(false);
           clearInterval(typeInterval);
         }
-      }, 65); // Velocidad de escritura (50ms entre cada letra)
+      }, 65); 
 
       return () => clearInterval(typeInterval);
     }
@@ -89,7 +88,7 @@ export default function Main() {
       <button
         className="absolute translate-y-[calc(100%+5rem)] sm:translate-y-[calc(100%+4.4rem)] bg-primaryButton-green rounded-full w-15 h-15 flex items-center justify-center hover:shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
         onClick={handleClick}
-        disabled={loading || isTyping} // Deshabilitar mientras carga o escribe
+        disabled={loading || isTyping}
       >
         <Image src="/images/icon-dice.svg" alt="dice" width={24} height={24} />
       </button>

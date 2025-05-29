@@ -1,4 +1,4 @@
-export interface SlipObject{
-    id:    number;
-    advice:     string;
+export interface SlipObject {
+  id: number;
+  advice: string;
 }
